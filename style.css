@@ -397,3 +397,76 @@ footer {
     pointer-events: none;
 }
 
+
+/* ===== استایل سوالات متداول ===== */
+.faq-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 15px;
+}
+
+.section-title {
+    text-align: center;
+    color: #00ff66;
+    margin-bottom: 30px;
+    font-family: monospace;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 102, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: #00ff66;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 18px 20px;
+    text-align: right;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+}
+
+.faq-icon {
+    color: #00ff66;
+    font-size: 22px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+/* وقتی سوال بازه، علامت + میشه × */
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.faq-answer p {
+    padding: 0 20px 18px;
+    color: #bbb;
+    line-height: 1.9;
+    margin: 0;
+}
+
