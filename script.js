@@ -103,3 +103,27 @@ function drawMatrix() {
 
 setInterval(drawMatrix, 33);
 
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+        const item = button.parentElement;
+        const answer = item.querySelector('.faq-answer');
+
+        // بستن بقیه سوال‌ها (اختیاری - اگر بخوای چندتا همزمان باز باشن، این بلوک رو حذف کن)
+        document.querySelectorAll('.faq-item.active').forEach(other => {
+            if (other !== item) {
+                other.classList.remove('active');
+                other.querySelector('.faq-answer').style.maxHeight = null;
+            }
+        });
+
+        // باز یا بسته کردن سوال فعلی
+        item.classList.toggle('active');
+        if (item.classList.contains('active')) {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        } else {
+            answer.style.maxHeight = null;
+        }
+    });
+});
+
+
